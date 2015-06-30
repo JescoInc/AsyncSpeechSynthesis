@@ -18,15 +18,15 @@ namespace AsyncSpeechSynth
 
         static async void Example()
         {
-            Thread.Sleep(100);
+            
             string t = await Task.Run(() => runThis());
         }
 
         static string runThis()
         {
             string result = Console.ReadLine();
-            
 
+            Thread.Sleep(1000);
             using (SpeechSynthesizer speech = new SpeechSynthesizer())
             {
                 speech.SelectVoice("Microsoft Zira Desktop");
